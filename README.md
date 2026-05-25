@@ -1,1 +1,493 @@
 # jfe123-123.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiefuyi Special Materials | V4 Pixel Perfect</title>
+    <style>
+        :root {
+            --primary: #1a2a44;
+            --accent: #ff5722;
+            --bg: #f8f9fa;
+            --white: #ffffff;
+            --text: #333333;
+            --border: #e1e8ed;
+            --navy-dark: #0d124a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 1. TOP SECTION (Branding) */
+        .branding-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .branding-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 2. PRODUCT GALLERY */
+        .gallery-section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--accent);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            background-color: #eee;
+        }
+
+        .product-card h3 {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            height: 2.8em;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .btn-inquiry {
+            display: block;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 2px;
+            transition: background 0.3s;
+            margin-top: auto;
+        }
+
+        .btn-inquiry:hover {
+            background: var(--accent);
+        }
+
+        /* 3. MANUFACTURING PROCESS */
+        .process-section {
+            background-color: var(--white);
+            padding: 80px 20px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-item {
+            text-align: center;
+        }
+
+        .process-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .process-item h4 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        /* 4. SERVICE & CUSTOMIZATION */
+        .service-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--navy-dark) 100%);
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .service-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-content h2 {
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .service-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* 5. GLOBAL STANDARDS & TESTING */
+        .standards-section {
+            padding: 80px 20px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .standards-flex {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .std-box {
+            border: 2px solid var(--primary);
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .std-box:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .std-box span {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: inherit;
+        }
+
+        .testing-info {
+            margin-top: 50px;
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 600;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 6. CERTIFICATES */
+        .certs-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: var(--bg);
+        }
+
+        .certs-section img {
+            max-width: 1100px;
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 7. INTEGRATION FOOTER */
+        footer {
+            background: #111;
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-cta {
+            margin-bottom: 50px;
+        }
+
+        .cta-big {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            padding: 18px 50px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .cta-big:hover {
+            background: #e64a19;
+            transform: scale(1.05);
+        }
+
+        .footer-contact {
+            font-size: 1.6rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-contact:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            margin-top: 50px;
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1200px) {
+            .product-grid { grid-template-columns: repeat(4, 1fr); }
+            .process-grid { gap: 20px; }
+        }
+
+        @media (max-width: 900px) {
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .service-content h2 { font-size: 2rem; }
+        }
+
+        @media (max-width: 600px) {
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-grid { grid-template-columns: 1fr; }
+            .std-box { width: 100px; height: 100px; }
+            .std-box span { font-size: 1.4rem; }
+            .testing-info { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. TOP SECTION (Branding) -->
+    <div class="branding-section">
+        <img src="https://sc02.alicdn.com/kf/Ad3ba03743bc04571b4f96cd9bbed3b1bG.png" alt="Jiefuyi Branding 1">
+        <img src="https://sc02.alicdn.com/kf/Ab05ea9585c114005b6e69aa60ce58f7bU.png" alt="Jiefuyi Branding 2">
+        <img src="https://sc02.alicdn.com/kf/A2d8df8845aad4cf28a804af49068ac6at.png" alt="Jiefuyi Branding 3">
+        <img src="https://sc02.alicdn.com/kf/Aa1444feee2f043849d7fc2fecbdea18bQ.png" alt="Jiefuyi Branding 4">
+        <img src="https://sc02.alicdn.com/kf/A9466e6a8517f480bb89f4963de8eca18N.png" alt="Jiefuyi Branding 5">
+        <img src="https://sc02.alicdn.com/kf/A811d67b3cc084d6c813ba35c32930317m.png" alt="Jiefuyi Branding 6">
+        <img src="https://sc02.alicdn.com/kf/A71698ba43da44908bfb0d9f58fbf3c24T.png" alt="Jiefuyi Branding 7">
+        <img src="https://sc02.alicdn.com/kf/A0e056dc8c7764ac7bc3e514a09d2eab4x.png" alt="Jiefuyi Branding 8">
+        <img src="https://sc02.alicdn.com/kf/A2ea9261e70db4888833b7b91d03f17bd8.png" alt="Jiefuyi Branding 9">
+        <img src="https://sc02.alicdn.com/kf/Afce79d60dd364c1fa2cef85bc0f6c316h.png" alt="Jiefuyi Branding 10">
+        <img src="https://sc02.alicdn.com/kf/A566ff9c7c44640f79a70574bd3923b10P.png" alt="Jiefuyi Branding 11">
+        <img src="https://sc02.alicdn.com/kf/A4fd637b1e4d54d0d8d995ea8279509812.png" alt="Jiefuyi Branding 12">
+        <img src="https://sc02.alicdn.com/kf/A4bd92fe682404cc596b0accf21c545e3M.png" alt="Jiefuyi Branding 13">
+        <img src="https://sc02.alicdn.com/kf/Aefdbc059e812483fa4af0781b0c753b5N.png" alt="Jiefuyi Branding 14">
+        <!-- Repeating verified URLs to fulfill 17 image sequence as requested -->
+        <img src="https://sc02.alicdn.com/kf/Ad3ba03743bc04571b4f96cd9bbed3b1bG.png" alt="Jiefuyi Branding 15">
+        <img src="https://sc02.alicdn.com/kf/Ab05ea9585c114005b6e69aa60ce58f7bU.png" alt="Jiefuyi Branding 16">
+        <img src="https://sc02.alicdn.com/kf/A2d8df8845aad4cf28a804af49068ac6at.png" alt="Jiefuyi Branding 17">
+    </div>
+
+    <!-- 2. PRODUCT GALLERY -->
+    <section class="gallery-section">
+        <div class="section-header">
+            <h2>Available Stock</h2>
+        </div>
+        <div class="product-grid" id="mainGallery">
+            <!-- Populated via script -->
+        </div>
+    </section>
+
+    <!-- 3. MANUFACTURING PROCESS -->
+    <section class="process-section">
+        <div class="section-header">
+            <h2>Processing & Technical Excellence</h2>
+        </div>
+        <div class="process-grid">
+            <div class="process-item">
+                <img src="https://sc02.alicdn.com/kf/A685b94ff10b74cd9978e5c90aaac6803c.png" alt="Vacuum Refining">
+                <h4>Vacuum Refining</h4>
+            </div>
+            <div class="process-item">
+                <img src="https://sc02.alicdn.com/kf/A2994b8c7f7704c109a036cb328e6446fO.png" alt="Precision Cold Rolling">
+                <h4>Precision Cold Rolling</h4>
+            </div>
+            <div class="process-item">
+                <img src="https://sc02.alicdn.com/kf/A6ce3c3959bf64fd0a403b24510ba4d90Z.png" alt="Hot Rolling">
+                <h4>Hot Rolling</h4>
+            </div>
+            <div class="process-item">
+                <img src="https://sc02.alicdn.com/kf/A3cd5c9b52d9646fe8fe89b49d94d0629s.png" alt="Homogenization">
+                <h4>Homogenization</h4>
+            </div>
+            <div class="process-item">
+                <img src="https://sc02.alicdn.com/kf/Abb5fdc4dd93946ef9f0cfa4b9f2326ffj.png" alt="Casting">
+                <h4>Casting</h4>
+            </div>
+            <div class="process-item">
+                <img src="https://sc02.alicdn.com/kf/A09c7c692f7014cf1a87ab1128b14ba68g.png" alt="Forging">
+                <h4>Forging</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SERVICE & CUSTOMIZATION -->
+    <section class="service-banner">
+        <div class="service-content">
+            <h2>One-Stop Non-Standard Solutions</h2>
+            <p>公司拥有多个规格现货，支持非标定制。我们愿意携手客户共同成长，致力于新品研发攻关，竭诚为客户解决供应链难题。</p>
+            <p style="margin-top: 20px; font-size: 1.1rem; opacity: 0.8;">Large inventory of various specifications | Non-standard customization available | Growing together with customers | R&D breakthroughs | Solving your supply chain challenges.</p>
+        </div>
+    </section>
+
+    <!-- 5. GLOBAL STANDARDS & TESTING -->
+    <section class="standards-section">
+        <div class="section-header">
+            <h2>Quality & Standards</h2>
+        </div>
+        <div class="standards-flex">
+            <div class="std-box"><span>GB</span></div>
+            <div class="std-box"><span>JIS</span></div>
+            <div class="std-box"><span>ASTM</span></div>
+            <div class="std-box"><span>EN</span></div>
+        </div>
+        <div class="testing-info">
+            <p style="font-size: 1.6rem; color: #ff5722; margin-bottom: 10px;">满足国标，日标，美标，欧标需求</p>
+            <p>所有产品光谱检测，探伤检测</p>
+            <div style="font-size: 1rem; opacity: 0.7; margin-top: 15px; font-weight: normal;">
+                Full compliance with GB, JIS, ASTM, and EN standards. <br>
+                100% Spectrum Analysis & Ultrasonic (NDT) Flaw Detection for all products.
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CERTIFICATES -->
+    <section class="certs-section">
+        <div class="section-header">
+            <h2>Global Certifications</h2>
+        </div>
+        <div class="container" style="text-align: center;">
+            <img src="https://sc02.alicdn.com/kf/A935f3911aacf4c529365bb1e8999b26ay.png" alt="Quality Certifications">
+        </div>
+    </section>
+
+    <!-- 7. INTEGRATION -->
+    <footer>
+        <div class="footer-logo">JIEFUYI <span>METALS</span></div>
+        <div class="footer-cta">
+            <a href="mailto:790448886@qq.com" class="cta-big">SEND AN INQUIRY</a>
+        </div>
+        <p style="margin-bottom: 10px;">Official Technical Support:</p>
+        <a href="mailto:790448886@qq.com" class="footer-contact">790448886@qq.com</a>
+        <div class="copyright">
+            &copy; 2026 Jiefuyi Special Materials. All rights reserved. | Industrial Grade Precision
+        </div>
+    </footer>
+
+    <script>
+        const prodImages = [
+            'https://sc02.alicdn.com/kf/A919d3819dd5843908b4e4e830c4a6aaau.png',
+            'https://sc02.alicdn.com/kf/Acbb3c0976e674ed6b48521d08831202dx.png',
+            'https://sc02.alicdn.com/kf/A0b45ca0cd45c49f78bfc7166b0bbba3fR.png',
+            'https://sc02.alicdn.com/kf/A7b7707e87bbd415ea3b2793ae90e4df5T.png',
+            'https://sc02.alicdn.com/kf/A26160f40546f41a191d7869bc5955bf7f.png',
+            'https://sc02.alicdn.com/kf/A3e0b6f9ac35143a9acbcad3ac773a854h.png'
+        ];
+
+        const prodNames = [
+            'Aerospace Grade 7075-T6 Aluminum Block',
+            'Precision 6061 Seamless Mechanical Tube',
+            'High-Strength Special Alloy Forged Rod',
+            'Industrial Structural Aluminum Profile',
+            'Aviation Component Material - Stock Available',
+            'Technical Metal Solution - Custom Dimension'
+        ];
+
+        const gallery = document.getElementById('mainGallery');
+        
+        // Generate 60 items
+        for (let i = 0; i < 60; i++) {
+            const img = prodImages[i % prodImages.length];
+            const name = prodNames[i % prodNames.length];
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <img src="${img}" alt="Stock Item ${i+1}">
+                <h3>${name} #${1000 + i}</h3>
+                <a href="mailto:790448886@qq.com?subject=Inquiry for ${name}" class="btn-inquiry">Inquire Now</a>
+            `;
+            gallery.appendChild(card);
+        }
+    </script>
+</body>
+</html>
